@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cruise-ship-web-application": {
+      "hosting": {
+        "cruise-ship-web-application": [
+          "cruise-ship-web-application"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cruise-ship-web-application"
+  }
+}
