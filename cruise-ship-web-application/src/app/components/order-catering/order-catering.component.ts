@@ -12,4 +12,7 @@ export class OrderCateringComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectItem(x: any){
+    console.log("Item Selected: ", x);
+  }
 }
