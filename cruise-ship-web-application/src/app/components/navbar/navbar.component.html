@@ -7,25 +7,28 @@
     <div class="collapse navbar-collapse" id="navbarMain">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a routerLink="/" class="nav-link">Dashboard</a>
+          <a routerLink="/dashboard" class="nav-link">Dashboard</a>
         </li>
       </ul>
 
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
+        <li *ngIf="authService.isLoggedIn==false" class="nav-item">
           <a routerLink="/login" class="nav-link">Login</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/amenities/book" class="nav-link">Book Amenity</a>
+          <a routerLink="/amenities/book" class="nav-link">Book</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/amenities/change" class="nav-link">Modify Bookings</a>
+          <a routerLink="/amenities/change" class="nav-link">My Bookings</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/catering/order" class="nav-link">Order Catering</a>
+          <a routerLink="/catering/order" class="nav-link">Order</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/catering/modify" class="nav-link">Change Order</a>
+          <a routerLink="/catering/modify" class="nav-link">My Orders</a>
+        </li>
+        <li *ngIf="authService.isLoggedIn" class="nav-item">
+          <a href="#" (click)="authService.SignOut()" class="nav-link">Logout</a>
         </li>
       </ul>
     </div>

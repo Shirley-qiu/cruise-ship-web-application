@@ -10,8 +10,10 @@ import { ModifyCateringComponent } from './components/modify-catering/modify-cat
 import { ChangeBookingComponent } from './components/change-booking/change-booking.component';
 import { LoginComponent } from './components/login/login.component';
 
+import { AuthGuard } from './shared/guard/auth.guard';
+
 const routes: Routes = [
-  {path: '', component: DashboardComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'amenities/book', component: BookAmenityComponent},
   {path: 'amenities/change', component: ChangeBookingComponent},
