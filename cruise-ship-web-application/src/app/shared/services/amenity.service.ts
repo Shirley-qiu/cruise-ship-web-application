@@ -36,17 +36,17 @@ export class AmenityService {
     
   }
 
-  getClient(id: string): Observable<Amenity> {
-    this.amenityDoc = this.afs.doc<Amenity>(`amenities/${id}`);
-    this.amenity = this.amenityDoc.snapshotChanges().pipe(map(action => {
-      if(action.payload.exists === false) {
-        return null;
-      } else {
-        const data = action.payload.data() as Amenity;
-        data.id = action.payload.id;
-        return data;
-      }
-    }));
-    return this.amenity;
-  }
+//   getClient(id: string): Observable<Amenity> {
+//     this.amenityDoc = this.afs.doc<Amenity>(`amenities/${id}`);
+//     this.amenity = this.amenityDoc.snapshotChanges().pipe(map(action => {
+//       if(action.payload.exists === false) {
+//         return null;
+//       } else {
+//         const data = action.payload.data() as Amenity;
+//         data.id = action.payload.id;
+//         return data;
+//       }
+//     }));
+//     return this.amenity;
+//   }
 }
