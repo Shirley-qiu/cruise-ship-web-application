@@ -10,15 +10,17 @@ import { ModifyCateringComponent } from './components/modify-catering/modify-cat
 import { ChangeBookingComponent } from './components/change-booking/change-booking.component';
 import { LoginComponent } from './components/login/login.component';
 
+import { AuthGuard } from './shared/guard/auth.guard';
+
 const routes: Routes = [
-  {path: '', component: DashboardComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
-  {path: 'amenities/book', component: BookAmenityComponent},
-  {path: 'amenities/change', component: ChangeBookingComponent},
-  {path: 'amenities/edit', component: AmenitiesComponent},
-  {path: 'catering/order', component: OrderCateringComponent},
-  {path: 'catering/modify', component: ModifyCateringComponent},
-  {path: 'catering/edit', component: CateringComponent}
+  {path: 'amenities/book', component: BookAmenityComponent, canActivate: [AuthGuard]},
+  {path: 'amenities/change', component: ChangeBookingComponent, canActivate: [AuthGuard]},
+  {path: 'amenities/edit', component: AmenitiesComponent, canActivate: [AuthGuard]},
+  {path: 'catering/order', component: OrderCateringComponent, canActivate: [AuthGuard]},
+  {path: 'catering/modify', component: ModifyCateringComponent, canActivate: [AuthGuard]},
+  {path: 'catering/edit', component: CateringComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

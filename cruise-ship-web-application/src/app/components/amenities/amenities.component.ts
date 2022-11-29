@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
-import { Amenity } from './amenities'
+// import { Amenity } from './amenities'
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
@@ -14,18 +14,18 @@ export class AmenitiesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @Input() amenity: Amenity | null = null;
-  @Output() edit = new EventEmitter<Amenity>();
+  // @Input() amenity: Amenity | null = null;
+  // @Output() edit = new EventEmitter<Amenity>();
 
-  listAmenities: Amenity[] = [
-    {
-      title: 'Gym',
-      description: 'This is a gym'
-    },
-    {
-      title: 'Bar',
-      description: 'This is a bar'
-    }
-  ];
+  // listAmenities: Amenity[] = [
+  //   {
+  //     title: 'Gym',
+  //     description: 'This is a gym'
+  //   },
+  //   {
+  //     title: 'Bar',
+  //     description: 'This is a bar'
+  //   }
+  // ];
 
 }
