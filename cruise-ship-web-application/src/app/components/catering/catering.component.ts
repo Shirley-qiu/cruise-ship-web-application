@@ -10,12 +10,20 @@ import { CateringService } from '../../shared/services/catering.service';
 })
 export class CateringComponent implements OnInit {
   items: Catering[];
+
+  imagesData: any = [
+    "./assets/burger.jpeg",
+    "./assets/chicken.jpeg",
+    "./assets/pasta.jpeg",
+    "./assets/salad.jpeg",
+    "./assets/steak.jpeg",
+  ];
   
   constructor(private cateringService: CateringService) { }
 
   ngOnInit(): void {
     this.cateringService.getItem().subscribe(items => this.items = items);
-    console.log("Items ", this.items);
+
   }
   
   // static checkAvailability(x: any){
