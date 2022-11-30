@@ -21,7 +21,7 @@
     width: 66%;
     height: auto;
 }
-.checkout{
+#checkout{
     position:fixed; 
     top: 500px; 
 }
