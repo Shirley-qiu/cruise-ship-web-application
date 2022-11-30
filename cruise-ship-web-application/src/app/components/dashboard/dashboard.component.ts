@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +10,9 @@ export class DashboardComponent implements OnInit {
 
   slides: any[] = new Array(3).fill({id: -1, src: '', title: '', subtitle: ''});
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.slides[0] = {

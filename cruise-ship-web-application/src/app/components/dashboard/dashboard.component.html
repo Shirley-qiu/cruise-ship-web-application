@@ -7,17 +7,7 @@
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
   <link href="dashboard.component.css" rel="stylesheet" type="text/css" />
-
-
-	<!-- Header -->
-
-
-
-
-
 </head>
-
-
 
 <body>
 
@@ -32,8 +22,8 @@
 
 
 		<div class = "columns">
-		<div class = "Catering">
-				<a href = "order-catering.component.html">
+			<div class = "Catering">
+				<a routerLink="/catering/order">
 					<figure>
 						<img src = "https://enville.com/wp-content/uploads/Great-Catering-Company-Toronto.jpg">
 					</figure>
@@ -49,7 +39,7 @@
 					Check out our catering from top level chefs!
 				</div>
 
-				<a class = "links" href = "order-catering.component.html">
+				<a class = "links" routerLink="/catering/order">
 					View Catering
 				</a>
 
@@ -59,7 +49,7 @@
 
 		<div class = "columns">
 		<div class = "Amenities">
-				<a href = "book-amenity.component.html">
+				<a routerLink="/amenities/book">
 					<figure>
 						<img src = "https://www.royalcaribbean.com/content/dam/royal/data/activity/the-perfect-storm/perfect-storm-water-slides-dual-racer-kids-riding-activity.jpg" alt = "alt not work">
 					</figure>
@@ -76,7 +66,7 @@
 					Find out all the amazing amenities you can do!
 				</div>
 
-				<a class = "links" href = "book-amenity.component.html">
+				<a class = "links" routerLink="/amenities/book">
 					View Amenities
 				</a>
 
@@ -108,26 +98,29 @@
 				</div>
 
 				<div class= "contain">
-				<div class = "twocolumns">
-					<h1 class = "head1">
-						Why Us?
-					</h1>
-					<div class = body3>
-
-						<h2 class = "head3">Feel Free</h2>
-No schedules. No stipulations. Just award-winning amenities and diverse options from cuisine all over the world! From the only cruise line built for versatile vacationing.
-
-<h2 class = head3>Get More At Sea </h2>
-Enrich your cruise vacation with up to 10 Free Offers with our Free At Sea promotion. Choose from Free Unlimited Open Bar, Free Specialty Dining, Free Shore Excursions, Free WiFi and Free 3rd & 4th Guests.
-
-<h2 class = head3> Vacation Your Way </h2>
-Our award-winning ships are designed for you to enjoy as you choose while cruising to beautiful destinations around the world. Add a wide range of superb dining options and spectacular entertainment and you'll experience your best vacation ever.
+					<div class = "twocolumns">
+						<h1 class = "head1">
+							Why Us?
+						</h1>
+						<div class = "card">
+							<div class="card-body">
+								<h2 class = "head3">Feel Free</h2>
+									No schedules. No stipulations. Just award-winning amenities and diverse options from cuisine all over the world! From the only cruise line built for versatile vacationing.
+							</div>
+							<div class="card-body">
+								<h2 class = head3>Get More At Sea </h2>
+									Enrich your cruise vacation with up to 10 Free Offers with our Free At Sea promotion. Choose from Free Unlimited Open Bar, Free Specialty Dining, Free Shore Excursions, Free WiFi and Free 3rd & 4th Guests.
+							</div>
+							<div class="card-body">
+								<h2 class = head3> Vacation Your Way </h2>
+									Our award-winning ships are designed for you to enjoy as you choose while cruising to beautiful destinations around the world. Add a wide range of superb dining options and spectacular entertainment and you'll experience your best vacation ever.
+							</div>
+						</div>
 					</div>
-				</div>
 
 			</div>
-			</div>
-		</section>
+		</div>
+	</section>
 
 
 
@@ -139,7 +132,7 @@ Our award-winning ships are designed for you to enjoy as you choose while cruisi
 
 	<hr class = "line">
 	<div class = "bottom">
-		© 2022,   ___OUR CRUISE NAME____ , Ltd. All Rights Reserved.
+		© 2022,  CruiseControl, Ltd. All Rights Reserved.
 	</div>
 
   <script src="script.js"></script>
