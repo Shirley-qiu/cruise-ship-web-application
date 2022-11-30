@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CateringComponent } from '../catering/catering.component';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Catering } from 'src/app/models/catering';
+import { CateringService } from '../../shared/services/catering.service';
 
 @Component({
   selector: 'app-order-catering',
@@ -8,19 +11,23 @@ import { CateringComponent } from '../catering/catering.component';
 })
 export class OrderCateringComponent implements OnInit {
   cart = new Array();
+  items: Catering[];
+  editState: boolean = false;
+  itemToEdit: Catering;
 
-  constructor() { }
+  constructor(private cateringService: CateringService) { }
 
   ngOnInit(): void {
+    this.cateringService.getItem().subscribe(items => this.items = items);
   }
 
   selectItem(x: any){
     this.cart.push(x);
-    console.log("cart: ", this.cart);
-    CateringComponent.checkAvailability(this.cart[this.cart.length - 1]);
   }
 
-  showCart(){
-    //sends cart to html
+
+  editItem(item: Catering){
+    this.editState = true;
+    this.itemToEdit = item;
   }
 }
