@@ -9,12 +9,14 @@ import { BookAmenityComponent } from './components/book-amenity/book-amenity.com
 import { ModifyCateringComponent } from './components/modify-catering/modify-catering.component';
 import { ChangeBookingComponent } from './components/change-booking/change-booking.component';
 import { LoginComponent } from './components/login/login.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 import { AuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
+  {path: 'admin', component: AdminComponent},
   {path: 'amenities/book', component: BookAmenityComponent, canActivate: [AuthGuard]},
   {path: 'amenities/change', component: ChangeBookingComponent, canActivate: [AuthGuard]},
   {path: 'amenities/edit', component: AmenitiesComponent, canActivate: [AuthGuard]},
