@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  slides: any[] = new Array(3).fill({id: -1, src: '', title: '', subtitle: ''});
+
   constructor() { }
 
   ngOnInit(): void {
+    this.slides[0] = {
+      src: './assets/img/bar.jpg',
+    };
+    this.slides[1] = {
+      src: './assets/img/cafe.jpg',
+    }
+    this.slides[2] = {
+      src: './assets/img/gym.jpg',
+    }
   }
 
 }
