@@ -21,9 +21,9 @@
     width: 66%;
     height: auto;
 }
-.checkout{
+#checkout{
     position:fixed; 
-    top: 500px; 
+    top: 600px; 
 }
 .button-10 {
     margin: 10px;
