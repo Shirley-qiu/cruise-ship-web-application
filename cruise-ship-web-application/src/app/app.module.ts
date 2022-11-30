@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -15,10 +16,14 @@ import { BookAmenityComponent } from './components/book-amenity/book-amenity.com
 import { ModifyCateringComponent } from './components/modify-catering/modify-catering.component';
 import { ChangeBookingComponent } from './components/change-booking/change-booking.component';
 import { LoginComponent } from './components/login/login.component';
+
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
+
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { AuthService } from "./shared/services/auth.service";
+
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
@@ -29,6 +34,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -49,6 +55,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     MatCardModule,
     MatDialogModule,
+    MatSlideToggleModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
@@ -59,12 +66,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     providePerformance(() => getPerformance()),
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase, 'Cruise-ship-web-application'),
     AngularFirestoreModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [
-    ScreenTrackingService,UserTrackingService
+    ScreenTrackingService,
+    UserTrackingService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
