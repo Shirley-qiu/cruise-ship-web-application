@@ -11,5 +11,8 @@ export class CateringComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
+  static checkAvailability(x: any){
+    console.log("Item Selected:", x); 
+  }
 }

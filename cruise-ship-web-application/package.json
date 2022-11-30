@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
     "bootstrap": "4.0.0-beta.2",
+    "firebase": "^9.14.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.1",
     "popper.js": "^1.16.1",
