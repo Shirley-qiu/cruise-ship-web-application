@@ -12,7 +12,7 @@
       </ul>
 
       <ul class="navbar-nav ml-auto">
-        <li *ngIf="authService.isLoggedIn==false" class="nav-item">
+        <li *ngIf="!isLoggedIn" class="nav-item">
           <a routerLink="/login" class="nav-link">Login</a>
         </li>
         <li class="nav-item">
@@ -27,8 +27,8 @@
         <li class="nav-item">
           <a routerLink="/catering/modify" class="nav-link">My Orders</a>
         </li>
-        <li *ngIf="authService.isLoggedIn" class="nav-item">
-          <a href="#" (click)="authService.SignOut()" class="nav-link">Logout</a>
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <a href="#" (click)="onLogoutClick()" class="nav-link">Logout</a>
         </li>
       </ul>
     </div>
