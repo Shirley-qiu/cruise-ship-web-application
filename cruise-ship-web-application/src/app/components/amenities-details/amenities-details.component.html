@@ -1,0 +1,31 @@
+<div *ngIf="currentAmenity" class="edit-form">
+    <h4>Amenity</h4>
+    <form>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" [(ngModel)]="currentAmenity.title" name="title" />
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" [(ngModel)]="currentAmenity.description"
+                name="description" />
+        </div>
+    </form>
+
+    <button mat-raised-button color="primary" *ngIf="currentAmenity.available" (click)="updateAvailable(false)" style="margin-right:1em">
+        <mat-icon>event_busy</mat-icon> Make Unavailable
+    </button>
+    <button mat-raised-button color="primary" *ngIf="!currentAmenity.available" (click)="updateAvailable(true)" style="margin-right:1em">
+        <mat-icon>event_available</mat-icon> Make Available
+    </button>
+
+    <button mat-raised-button color="accent" type="submit" (click)="updateAmenity()">
+        <mat-icon>update</mat-icon> Update
+    </button>
+    <p>{{ message }}</p>
+</div>
+
+<div *ngIf="!currentAmenity">
+    <br />
+    <p>Cannot access this Tutorial...</p>
+</div>
