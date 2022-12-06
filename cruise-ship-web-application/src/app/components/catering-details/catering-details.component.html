@@ -1,0 +1,24 @@
+<div *ngIf="currentItem" class="edit-form">
+    <h4>Item Details</h4>
+    <form>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" [(ngModel)]="currentItem.title" name="title" />
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="text" class="form-control" id="quantity" [(ngModel)]="currentItem.quantity"
+                name="quantity" />
+        </div>
+    </form>
+
+    <button mat-raised-button color="accent" type="submit" (click)="updateItem()">
+        <mat-icon>update</mat-icon> Update
+    </button>
+    <p>{{ message }}</p>
+</div>
+
+<div *ngIf="!currentItem">
+    <br />
+    <p>Cannot access this Item...</p>
+</div>
