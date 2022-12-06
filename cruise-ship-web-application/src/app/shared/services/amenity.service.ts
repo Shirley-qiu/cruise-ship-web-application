@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
-  AngularFirestoreCollection
+  AngularFirestoreCollection,
 } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { Amenity } from 'src/app/models/amenity';
@@ -22,7 +22,7 @@ export class AmenityService {
     ref => ref.orderBy('title', 'asc'));
   }
 
-  getAmenities(): Observable<Amenity[]> {
+  /* getAmenities(): Observable<Amenity[]> {
     // Grab amenity by id
     this.amenities = this.amenityCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(action => {
@@ -33,8 +33,17 @@ export class AmenityService {
     }));
 
     return this.amenities;
-    
+  } */
+
+
+  getAll(): AngularFirestoreCollection<Amenity> {
+    return this.amenityCollection;
   }
+
+  update(id: string, data: any): Promise<void> {
+    return this.amenityCollection.doc(id).update(data);
+  }
+
 
 //   getClient(id: string): Observable<Amenity> {
 //     this.amenityDoc = this.afs.doc<Amenity>(`amenities/${id}`);

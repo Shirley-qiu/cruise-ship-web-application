@@ -1,14 +1,26 @@
-<h2>Amenities</h2>
+<h2>View Amenities</h2>
+<h4>Select an amenity to modify its contents.</h4>
 
-<ng-container class="amenity-container" *ngFor="let amenity of amenities; let i = index">
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>{{amenity.title}}</mat-card-title>
-    </mat-card-header>
-    <img class="example-header-image" mat-card-image [src]="imagesData[i]" style="max-width:600px">
-    <mat-card-content>
-      <p>{{amenity.description}}</p>
-      <mat-slide-toggle [checked]="amenity.available === true ? true : false">Available to passengers</mat-slide-toggle>
-    </mat-card-content>
-  </mat-card>
-</ng-container>
+<div class="list row">
+  <div class="col-md-6">
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let amenity of amenities; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveAmenity(amenity, i)"
+      >
+      <img class="example-header-image" mat-card-image [src]="imagesData[i]" style="max-width:50px">
+      {{ amenity.title }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentAmenity">
+      <app-amenities-details
+        (refreshList)="refreshList()"
+        [amenity]="currentAmenity"
+      ></app-amenities-details>
+    </div>
+  </div>
+</div>

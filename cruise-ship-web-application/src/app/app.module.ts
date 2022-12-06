@@ -8,6 +8,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AmenitiesComponent } from './components/amenities/amenities.component';
@@ -38,6 +39,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './components/admin/admin.component';
+import { AmenitiesDetailsComponent } from './components/amenities-details/amenities-details.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { AdminComponent } from './components/admin/admin.component';
     ModifyCateringComponent,
     ChangeBookingComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    AmenitiesDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +65,7 @@ import { AdminComponent } from './components/admin/admin.component';
     MatSlideToggleModule,
     MatInputModule,
     MatButtonModule,
+    MatIconModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
