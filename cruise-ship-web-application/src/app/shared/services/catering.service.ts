@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { Catering } from 'src/app/models/catering';
 import { map } from 'rxjs/operators';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -38,5 +39,13 @@ export class CateringService {
   updateItem(item: Catering){
     this.cateringDoc = this.afs.doc('catering/${item.id}');
     this.cateringDoc.update(item);
+  }
+
+  getAll(): AngularFirestoreCollection<Catering> {
+    return this.cateringCollection;
+  }
+
+  update(id: string, data: any): Promise<void> {
+    return this.cateringCollection.doc(id).update(data);
   }
 }

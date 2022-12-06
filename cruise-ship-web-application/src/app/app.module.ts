@@ -40,6 +40,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './components/admin/admin.component';
 import { AmenitiesDetailsComponent } from './components/amenities-details/amenities-details.component';
+import { CateringDetailsComponent } from './components/catering-details/catering-details.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { AmenitiesDetailsComponent } from './components/amenities-details/amenit
     ChangeBookingComponent,
     LoginComponent,
     AdminComponent,
-    AmenitiesDetailsComponent
+    AmenitiesDetailsComponent,
+    CateringDetailsComponent
   ],
   imports: [
     BrowserModule,
