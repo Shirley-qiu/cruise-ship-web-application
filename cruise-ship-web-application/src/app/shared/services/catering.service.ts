@@ -18,7 +18,7 @@ export class CateringService {
   cateringDoc: AngularFirestoreDocument<Catering>;
   cater: Observable<Catering>;
   orderingCollection: AngularFirestoreCollection<Catering>;
-  orderingDoc: AngularFirestoreDocument<Catering>;
+  orderingDoc: AngularFirestoreDocument;
 
   constructor(private afs: AngularFirestore) {
     this.cateringCollection = this.afs.collection('catering', 
@@ -26,6 +26,8 @@ export class CateringService {
     
     this.orderingCollection = this.afs.collection('orders', 
     ref => ref.orderBy('title', 'asc'));
+
+    this.orderingDoc = this.orderingCollection.doc("Order Confirmation");
    }
 
    getItem(): Observable<Catering[]> {
@@ -60,5 +62,13 @@ export class CateringService {
 
   updateOrder(id: string, data: any): Promise<void> {
     return this.orderingCollection.doc(id).update(data);
+  }
+
+  confirm(): Promise<void>{
+    return this.orderingDoc.set({confirmation: true});
+  }
+
+  cancel(): Promise<void>{
+    return this.orderingDoc.set({confirmation: false});
   }
 }

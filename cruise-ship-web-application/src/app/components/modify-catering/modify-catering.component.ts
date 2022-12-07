@@ -44,6 +44,11 @@ export class ModifyCateringComponent implements OnInit {
   }
 
   confirmOrder(): void{
+    this.cateringService.confirm();
+  }
+
+  cancelOrder(): void{
+    this.cateringService.cancel();
   }
   
 }
