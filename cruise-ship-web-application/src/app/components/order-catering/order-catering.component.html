@@ -1,36 +1,21 @@
+<h2>View Catering Items</h2>
+<h4>Add Items to your cart</h4>
 
-<main class="row">
-    <section class="col-lg-2">
-        <figure>
-            <img id="img1" src="../../../assets/burger.jpeg" alt="Burger"><br>
-            <button class="button-10" role="button" (click)="selectItem('Burger')">Add Item</button>
-        </figure>
-    </section>
-    <section class="col-lg-2">
-        <figure>
-            <img  id="img2" src="../../../assets/pasta.jpeg" alt="Pasta"><br>
-            <button class="button-10" role="button" (click)="selectItem('Pasta')">Add Item</button>
-        </figure>
-    </section>
-    <section class="col-lg-2">
-        <figure>
-            <img  id="img3" src="../../../assets/steak.jpeg" alt="Steak"><br>
-            <button class="button-10" role="button" (click)="selectItem('Steak')">Add Item</button>
-        </figure>
-    </section>
-    <section class="col-lg-2">
-        <figure>
-            <img  id="img4" src="../../../assets/chicken.jpeg" alt="Chicken"><br>
-            <button class="button-10" role="button" (click)="selectItem('Chicken')">Add Item</button>
-        </figure>
-    </section>
-    <section class="col-lg-2">
-        <figure>
-            <img  id="img5" src="../../../assets/salad.jpeg" alt="Salad"><br>
-            <button class="button-10" role="button" (click)="selectItem('Salad')">Add Item</button>
-        </figure>
-    </section>
-    
-</main>
+<div class="list row">
+    <div class="col-md-6">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of items; let i = index" [class.active]="i == currentIndex"
+                (click)="setActiveItem(item, i, item.title, item.quantity)">
+                <img class="item-img" mat-card-image [src]="imagesData[i]">
+                {{ item.title }}
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <div *ngIf="currentItem">
+            <app-orders (refreshList1)="refreshList()" [item]="currentItem"></app-orders>
+        </div>
+    </div>
+</div>
 
-<button id="checkout" class="button-10">Submit Order</button>
+<button mat-raised-button id="btn" routerLink="../modify" routerLinkActive="active">Check out!</button>

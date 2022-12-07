@@ -41,6 +41,7 @@ import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './components/admin/admin.component';
 import { AmenitiesDetailsComponent } from './components/amenities-details/amenities-details.component';
 import { CateringDetailsComponent } from './components/catering-details/catering-details.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { CateringDetailsComponent } from './components/catering-details/catering
     LoginComponent,
     AdminComponent,
     AmenitiesDetailsComponent,
-    CateringDetailsComponent
+    CateringDetailsComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

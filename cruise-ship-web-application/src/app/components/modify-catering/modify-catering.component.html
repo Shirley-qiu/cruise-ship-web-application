@@ -1,1 +1,19 @@
-<p>modify-catering works!</p>
+<h2>View Order</h2>
+<h3 class="quantity1">Quantity</h3>
+
+
+<div class="list row">
+    <div class="col-md-6">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of items; let i = index" [class.active]="i == currentIndex" (click)="setActiveItem(item, i)">
+                <img class="item-img" mat-card-image [src]="imagesData[i]">
+                {{ item.title }}
+                <h4 class="quantity">{{item.quantity}}</h4>
+               
+            </li>
+        </ul>
+    </div>
+</div>
+
+<button class="btn" mat-raised-button (click)="confirmOrder()">Confirm Order</button>
+<button mat-raised-button class="btn" routerLink="../order" routerLinkActive="active">Edit Order</button>
