@@ -8,7 +8,8 @@
             <li class="list-group-item" *ngFor="let item of items; let i = index" [class.active]="i == currentIndex" (click)="setActiveItem(item, i)">
                 <img class="item-img" mat-card-image [src]="imagesData[i]">
                 {{ item.title }}
-                <h4 class="quantity">{{item.quantity}}</h4>
+                <h4 *ngIf="item.quantity == 0" class="quantity">0</h4>
+                <h4 *ngIf="item.quantity > 0" class="quantity">{{item.quantity}}</h4>
                
             </li>
         </ul>
