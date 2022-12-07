@@ -15,12 +15,15 @@
       </li>
     </ul>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <div *ngIf="currentAmenity">
       <app-amenities-details
         (refreshList)="refreshList()"
         [amenity]="currentAmenity"
       ></app-amenities-details>
     </div>
+  </div>
+  <div class="col-md-2">
+    <app-sidebar></app-sidebar>
   </div>
 </div>
