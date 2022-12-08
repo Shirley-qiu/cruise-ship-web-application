@@ -5,6 +5,9 @@ import { Catering } from 'src/app/models/catering';
 import { CateringService } from '../../shared/services/catering.service';
 import { map } from 'rxjs/operators';
 import { OrdersComponent } from '../orders/orders.component';
+import {MatDialog} from '@angular/material/dialog';
+import { ConfirmComponent } from '../confirm/confirm.component';
+import { CancelComponent } from '../cancel/cancel.component';
 
 @Component({
   selector: 'app-modify-catering',
@@ -31,7 +34,10 @@ export class ModifyCateringComponent implements OnInit {
     "./assets/steak.jpeg",
   ];
 
-  constructor(private cateringService: CateringService) { }
+  constructor(
+    private cateringService: CateringService,
+    private dialog: MatDialog
+    ) { }
 
   ngOnInit(): void {
     this.cateringService.getItem().subscribe(items => this.items = items);
@@ -43,12 +49,14 @@ export class ModifyCateringComponent implements OnInit {
     this.currentIndex = index;
   }
 
-  confirmOrder(): void{
+  confirmOrder(){
     this.cateringService.confirm();
+    const dialogRef = this.dialog.open(ConfirmComponent);
   }
 
   cancelOrder(): void{
     this.cateringService.cancel();
+    const dialogRef = this.dialog.open(CancelComponent);
   }
   
 }
