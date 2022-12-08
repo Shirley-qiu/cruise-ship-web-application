@@ -42,6 +42,8 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AmenitiesDetailsComponent } from './components/amenities-details/amenities-details.component';
 import { CateringDetailsComponent } from './components/catering-details/catering-details.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { ConfirmComponent } from './components/confirm/confirm.component';
+import { CancelComponent } from './components/cancel/cancel.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { OrdersComponent } from './components/orders/orders.component';
     AdminComponent,
     AmenitiesDetailsComponent,
     CateringDetailsComponent,
-    OrdersComponent
+    OrdersComponent,
+    ConfirmComponent,
+    CancelComponent
   ],
   imports: [
     BrowserModule,
