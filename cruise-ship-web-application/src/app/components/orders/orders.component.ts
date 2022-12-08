@@ -46,16 +46,12 @@ export class OrdersComponent implements OnInit {
 
     if (this.currentItem.id) {
       this.cateringService.updateOrder(this.currentItem.id, data)
-        .then(() => this.message = 'The item was updated successfully!')
+        .then(() => this.message = 'The item was added successfully!')
         .catch(err => console.log(err));
     }
 
   }
 
-  // getArr(arr1: string[], arr2: number[]){
-  //   this.arrTitle = arr1;
-  //   this.arrQuan = arr2;
-  // }
   
 
 }
